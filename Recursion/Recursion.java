@@ -1,4 +1,4 @@
-public class tenToOne {
+public class Recursion {
     public static void increaseingOrder(int n) {
         if (n == 1) {
             System.out.println(n);
@@ -46,6 +46,18 @@ public class tenToOne {
             return false;
         }
     }
+
+
+    public static int firstOccureance(int arr[], int i, int key){
+        if(i==arr.length) return -1;
+        else if(arr[i]==key) return i;
+        else return firstOccureance(arr, i+1, key);
+    }
+
+    public static int pow(int base, int power){
+        if(power==0) return 1;
+        else return base * pow(base, power-1);
+    }
     public static void main(String[] args) {
         int [] arr= {1,3,4,9,5};
        int  size = arr.length-1;
@@ -63,5 +75,13 @@ public class tenToOne {
 
         boolean t= sorted(arr,size );
         System.out.println("Is this array is sorted " + t);
+
+        int index = firstOccureance(arr,0, 5 );
+        System.out.printf("They key at %d index\n", index);
+
+        int power = 2;
+        int base = 3;
+        int a= pow(base, power);
+        System.out.println("the power of base is " + a);
     }
 }
