@@ -6,7 +6,7 @@ public class NextGreater {
         int []arr= {6,8,0,1,3};
         int []greater= new int[arr.length];
 
-        for(int i=arr.length-1;i>=0; i--){-
+        for(int i=arr.length-1;i>=0; i--){
             //while
             while(!s.isEmpty() && arr[i]>arr[s.peek()]){
                s.pop();

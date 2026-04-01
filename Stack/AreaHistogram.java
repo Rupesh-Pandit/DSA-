@@ -12,7 +12,7 @@ public class AreaHistogram {
 
              // next smaller left
              for(int i=0; i<arr.length; i++){
-                while(!s.isEmpty() && arr[s.peek()] > arr[i])
+                while(!s.isEmpty() && arr[s.peek()] >= arr[i])
                     s.pop();
 
                 if(s.isEmpty()){
@@ -23,11 +23,12 @@ public class AreaHistogram {
                 s.push(i);
              }
 
-             s= new Stack<>();
+             s.clear();
+             
              // next smaller right
              for(int i=arr.length-1; i>=0; i--){
 
-                while (!s.isEmpty() && arr[s.peek()] > arr[i]) {
+                while (!s.isEmpty() && arr[s.peek()] >= arr[i]) {
                     s.pop();
                 } 
                 if(s.isEmpty())
